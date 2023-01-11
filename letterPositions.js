@@ -35,4 +35,4 @@ const letterPositions = function(sentence) {
 };
 
 console.log(letterPositions("hello"));
-assertArraysEqual(letterPositions("hello"), [1]);
+assertArraysEqual(letterPositions("hello").e, [1]);
