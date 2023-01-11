@@ -31,12 +31,26 @@ const without = function(source, itemsToRemove) {
   return result;
 };
 
-// an easier way to do the without code
+// an easier way to do the "without" function
+
 // const without = (source, itemsToRemove) => source.filter(item => !itemsToRemove.includes(item));
+
+// // Define a function named "without" that takes in 2 arguments, "source" and "itemsToRemove"
+// const without = (source, itemsToRemove) => 
+//     // Use the filter method on the "source" array to keep only items that do not exist in the "itemsToRemove" array
+//     source.filter(
+//     // Define a callback function with one argument, "item"
+//     item => 
+//         // Use the "not" operator (!) to check if the "item" does not exist in the "itemsToRemove" array
+//         // This will return a new array containing only the items from the "source" array that do not exist in the "itemsToRemove" array
+//         !itemsToRemove.includes(item)
+//     );
+
 
 console.log(without([0, 1, 2, 3], [1])); // => [2, 3]
 console.log(without([1, 1, 2, 3], [1]));
 console.log(without([1, 2, 3, 1], [1]));
+console.log(without([], []));
 console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
 const words = ["hello", "world", "lighthouse"];
