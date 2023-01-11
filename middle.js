@@ -22,7 +22,7 @@ const middle = function(array) {
   if(!array.length) {
     return [];
   } else if((array.length % 2 === 0)) {
-    return [(array.length / 2), (array.length / 2 + 1)];
+    return [array[array.length / 2 - 1], array[array.length / 2]]
   } else {
     // divide the length by two
     // round the number down to the nearest integer
