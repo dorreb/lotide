@@ -19,7 +19,6 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqObjects = function(object1, object2) {
-  // return JSON.stringify(object1) === JSON.stringify(object2);
 
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
@@ -41,7 +40,7 @@ const eqObjects = function(object1, object2) {
 };
 
 const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject= { color: "red", size: "medium"};
+const anotherShirtObject= { size: "medium", color: "red"};
 eqObjects(shirtObject , anotherShirtObject); // => true
 // We need to use that return value in combination with assertEquals to test if the function is working correctly.
 assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
