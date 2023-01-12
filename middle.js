@@ -1,4 +1,7 @@
 const eqArrays = function(first, second) {
+  if (first.length === 0 && second.length === 0) {
+    return true;
+  }
   if (first.length !== second.length) {
     return false;
   }
@@ -10,29 +13,34 @@ const eqArrays = function(first, second) {
   return true;
 };
 
+
 const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1, arr2) === false) {
-    console.log("Assertation failed");
+    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
   } else {
-    console.log("Assertation passed");
+    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
   }
 };
 
 const middle = function(array) {
-  if (!array.length) {
-    return [];
-  } else if ((array.length % 2 === 0)) {
-    return [array[array.length / 2 - 1], array[array.length / 2]];
+  let resultArray = [];
+  let midIndex = array.length / 2;
+  if (array.length <= 2) {
+    return resultArray;
+  }
+  if (array.length % 2 === 0) {
+    resultArray.push(array[midIndex - 1], array[midIndex]);
+    return resultArray;
   } else {
-    // divide the length by two
-    // round the number down to the nearest integer
-    return [array[Math.floor(array.length / 2)]];
+    resultArray.push(array[Math.floor(midIndex)]);
+    return resultArray;
   }
 };
-assertArraysEqual(middle([1]), []);
+
+//TEST CODE
+assertArraysEqual(middle([1,]), []);
 assertArraysEqual(middle([1, 2]), []);
 assertArraysEqual(middle([1, 2, 3]), [2]);
 assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-console.log(middle([1, 2, 3, 4])); // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
-console.log(middle([1, 2, 3,])); // => [2]
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
