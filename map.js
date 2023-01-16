@@ -29,20 +29,31 @@ const map = function(array, callback) {
 };
 
 const results1 = map(words, word => word[0]);
-console.log(results1);
-
-const firstLetter = ['g', 'c', 't', 'm', 't'];
-assertArraysEqual(results1, firstLetter);
-
 const results2 = map(words, word => word.length);
-console.log(results2);
-const wordLength = [6, 7, 2, 5, 3];
-assertArraysEqual(results2, wordLength);
-
 const results3 = map(words, word => word.toUpperCase());
-console.log(results3);
-const upperCase = ["GROUND", "CONTROL", "TO", "MAJOR", "TOM"];
-assertArraysEqual(results3, upperCase);
+const results4 = map(words, (word) => word + word);
+const results5 = map(words, (word) => word[0] + word[word.length - 1]);
+
+
+assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
+assertArraysEqual(results2, [6, 7, 2, 5, 3]);
+assertArraysEqual(results3, ["GROUND", "CONTROL", "TO", "MAJOR", "TOM"]);
+assertArraysEqual(results4, [
+  "groundground",
+  "controlcontrol",
+  "toto",
+  "majormajor",
+  "tomtom",
+]);
+assertArraysEqual(results5, ["gd", "cl", "to", "mr", "tm"]);
+
+
+
+
+
+
+
+
 
 
 
