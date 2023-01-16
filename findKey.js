@@ -19,14 +19,16 @@ const findKey = function(object, callback) {
 
 const space = {
   "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
+  "Akaleri": { stars: 3 },
+  "noma": { stars: 2 },
+  "elBulli": { stars: 3 },
+  "Ora": { stars: 2 },
+  "Akelarre": { stars: 3 }
 };
 const results1 = findKey(space, x => x.stars === 6);
 console.log(results1);
 
 const firstFound = "noma";
 assertEqual(results1, firstFound);
+
+module.exports = findKey;

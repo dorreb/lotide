@@ -31,6 +31,8 @@ const without = function(source, itemsToRemove) {
   return result;
 };
 
+module.exports = without;
+
 // an easier way to do the "without" function
 
 // const without = (source, itemsToRemove) => source.filter(item => !itemsToRemove.includes(item));

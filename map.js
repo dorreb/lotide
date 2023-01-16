@@ -28,6 +28,8 @@ const map = function(array, callback) {
   return results;
 };
 
+module.exports = map;
+
 const results1 = map(words, word => word[0]);
 const results2 = map(words, word => word.length);
 const results3 = map(words, word => word.toUpperCase());

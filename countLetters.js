@@ -24,3 +24,5 @@ const countLetters = function(string) {
 };
 console.log(countLetters("Hello world"));
 
+module.exports = countLetters;
+
